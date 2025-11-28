@@ -84,7 +84,8 @@
 
         /* Seção Principal (Hero) */
         .hero {
-            background: url('') no-repeat center center/cover;
+            /* Imagem de fundo para o cabeçalho principal */
+            background: url('http://googleusercontent.com/image_collection/image_retrieval/3054634690944531501') no-repeat center center/cover;
             color: var(--cor-clara);
             text-align: center;
             padding: 100px 20px;
@@ -154,6 +155,16 @@
             text-align: center;
             width: 30%;
             min-width: 280px;
+        }
+        
+        /* NOVO ESTILO: Imagem dentro do item de serviço */
+        .servico-img {
+            width: 100%; 
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: block;
         }
 
         .servico-item h3 {
@@ -261,8 +272,10 @@
                     <h3>Torneamento CNC</h3>
                     <p>Produção de alta precisão e repetibilidade para grandes volumes e projetos complexos.</p>
                 </div>
+                
                 <div class="servico-item">
                     <h3>Fresa e Mandrilhamento</h3>
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/3054634690944531501_0" alt="Máquina de Fresa e Mandrilhamento" class="servico-img">
                     <p>Criação de superfícies planas, furos e rebaixos com rigor dimensional.</p>
                 </div>
                 <div class="servico-item">
@@ -278,7 +291,7 @@
     <section id="sobre">
         <div class="container">
             <h2>Nossa História</h2>
-            <p style="text-align: center;">Com mais de 20 anos de experiência, a **Tornearia do l7 se destaca no mercado pela qualidade e compromisso com a satisfação do cliente. Investimos constantemente em tecnologia e capacitação para entregar o melhor resultado em metalurgia e usinagem. Nossa equipe é formada por profissionais altamente qualificados, prontos para atender as demandas mais exigentes da indústria.</p>
+            <p style="text-align: center;">Com mais de 20 anos de experiência, a **Tornearia do l7** se destaca no mercado pela qualidade e compromisso com a satisfação do cliente. Investimos constantemente em tecnologia e capacitação para entregar o melhor resultado em metalurgia e usinagem. Nossa equipe é formada por profissionais altamente qualificados, prontos para atender as demandas mais exigentes da indústria.</p>
         </div>
     </section>
 
