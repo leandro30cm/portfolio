@@ -1,22 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tornearia do l7</title>
+    <title>Tornearia Precisão - Usinagem e Peças Sob Medida</title>
+    <style>
+        /* Variáveis CSS para fácil manutenção */
+        :root {
+            --cor-principal: #0056b3; /* Azul escuro/aço */
+            --cor-secundaria: #333;
+            --cor-fundo: #f4f4f4;
+            --cor-clara: #ffffff;
+            --cor-texto: #555;
+            --fonte-principal: 'Arial', sans-serif;
+        }
+
+        /* Estilos Globais */
+        body {
+            font-family: var(--fonte-principal);
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        h1, h2, h3 {
+            color: var(--cor-secundaria);
+            text-align: center;
+        }
+
+        /* Header e Navegação */
+        header {
+            background-color: var(--cor-principal);
+            color: var(--cor-clara);
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 0;
+            float: left;
+            color: var(--cor-clara);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            float: right;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: var(--cor-clara);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ccc;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* Seção Principal (Hero) */
+        .hero {
+            background: url('') no-repeat center center/cover;
+            color: var(--cor-clara);
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6); /* Overlay escuro */
+            z-index: 1;
+        }
+
+        .hero * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: var(--cor-clara);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .btn-principal {
+            background-color: #ff9900; /* Laranja de destaque */
+            color: var(--cor-secundaria);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .btn-principal:hover {
+            background-color: #e68a00;
+        }
+
+        /* Seção de Serviços */
+        #servicos {
+            padding: 40px 0;
+        }
+
+        .servicos-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .servico-item {
+            background: var(--cor-clara);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            width: 30%;
+            min-width: 280px;
+        }
+
+        .servico-item h3 {
+            color: var(--cor-principal);
+            margin-top: 0;
+        }
+
+        /* Seção Sobre */
+        #sobre {
+            background-color: var(--cor-clara);
+            padding: 40px 0;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Seção Contato */
+        #contato {
+            background-color: var(--cor-principal);
+            color: var(--cor-clara);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        #contato a {
+            color: #ff9900;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: var(--cor-secundaria);
+            color: var(--cor-clara);
+            font-size: 0.9em;
+        }
+
+        /* Responsividade (Para telas menores) */
+        @media (max-width: 768px) {
+            .logo, nav {
+                float: none;
+                text-align: center;
+            }
+
+            nav ul {
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 5px 0;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+            
+            .hero h2 {
+                font-size: 2em;
+            }
+
+            .servicos-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .servico-item {
+                width: 80%;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <header>
+        <div class="container clearfix">
+            <p class="logo">Tornearia Precisão</p>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h2>Excelência em Usinagem de Precisão</h2>
+            <p>Seu parceiro ideal na fabricação de peças e componentes sob medida. Qualidade e prazo garantidos.</p>
+            <a href="#contato" class="btn-principal">Solicite seu Orçamento</a>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <div class="servicos-grid">
+                <div class="servico-item">
+                    <h3>Torneamento CNC</h3>
+                    <p>Produção de alta precisão e repetibilidade para grandes volumes e projetos complexos.</p>
+                </div>
+                <div class="servico-item">
+                    <h3>Fresa e Mandrilhamento</h3>
+                    <p>Criação de superfícies planas, furos e rebaixos com rigor dimensional.</p>
+                </div>
+                <div class="servico-item">
+                    <h3>Solda e Reparos</h3>
+                    <p>Serviços de recuperação e manutenção de peças e equipamentos industriais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     
+    <hr>
 
+    <section id="sobre">
+        <div class="container">
+            <h2>Nossa História</h2>
+            <p style="text-align: center;">Com mais de 20 anos de experiência, a **Tornearia Precisão** se destaca no mercado pela qualidade e compromisso com a satisfação do cliente. Investimos constantemente em tecnologia e capacitação para entregar o melhor resultado em metalurgia e usinagem. Nossa equipe é formada por profissionais altamente qualificados, prontos para atender as demandas mais exigentes da indústria.</p>
+        </div>
+    </section>
 
+    <section id="contato">
+        <div class="container">
+            <h2>Fale Conosco</h2>
+            <p>Entre em contato hoje e solicite um orçamento sem compromisso. Transformamos seu projeto em realidade.</p>
+            <p>Telefone: **(XX) XXXX-XXXX** | E-mail: <a href="mailto:contato@precisao.com">contato@precisao.com</a></p>
+        </div>
+    </section>
 
-
-    Tornearia do l7
-
-
-
-
-
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tornearia Precisão. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
